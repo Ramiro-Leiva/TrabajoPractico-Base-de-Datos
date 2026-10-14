@@ -43,7 +43,17 @@ CREATE TABLE tipocomercio(tc_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 tc_descrip VARCHAR(20) UNIQUE NOT NULL);
 ```
 - `categoriaeconomica`: almacena las categorías económicas.
+ ```sql
+-- CategoriaEconomica:
+CREATE TABLE categoriaeconomica(ce_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT, ce_descrip VARCHAR(100) NOT NULL,
+ce_rue SMALLINT NOT NULL, UNIQUE (ce_descrip, ce_rue), FOREIGN KEY(ce_rue) REFERENCES rubrousoeconomico(rue_codi));
+```
 - `rubrousoeconomico`: contiene los rubros de uso económico.
+```sql
+-- Rubro Uso Economico
+CREATE TABLE rubrousoeconomico(rue_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+rue_descrip VARCHAR(100) UNIQUE NOT NULL);
+```
 - `datos`: tabla utilizada para almacenar los datos de origen.
 
 Las tablas se relacionan mediante claves primarias y claves foráneas, según corresponda.
