@@ -18,12 +18,18 @@ La base de datos contiene las siguientes tablas:
 
 - `intercambiocomercial`: almacena los registros de intercambio comercial.
  ```sql
+-- Intercambios Comerciales
 CREATE TABLE intercambiocomercial(ic_codi INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ic_anio SMALLINT(4) UNSIGNED NOT NULL,
 ic_mes SMALLINT(2) UNSIGNED ZEROFILL NOT NULL, ic_valor DECIMAL(18,2) UNSIGNED NOT NULL, ic_tipo SMALLINT NOT NULL,
 ic_pais SMALLINT NOT NULL, ic_categoriae SMALLINT NOT NULL, FOREIGN KEY(ic_tipo) REFERENCES tipocomercio(tc_codi),
 FOREIGN KEY (ic_pais) REFERENCES pais (p_codi), FOREIGN KEY (ic_categoriae) REFERENCES categoriaeconomica(ce_codi));
 ```
 - `pais`: contiene los países.
+ ```sql
+-- Pais:
+CREATE TABLE pais(p_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT, p_nombre VARCHAR(50) NOT NULL,
+p_zonac SMALLINT NOT NULL, UNIQUE (p_nombre, p_zonac), FOREIGN KEY (p_zonac) REFERENCES zonacomercial(zc_codi));
+```
 - `zonacomercial`: organiza los países por zona comercial.
 - `tipocomercio`: identifica el tipo de comercio, como exportaciones o importaciones.
 - `categoriaeconomica`: almacena las categorías económicas.
