@@ -69,6 +69,10 @@ El proyecto incluye las siguientes vistas:
 
 Estas vistas permiten consultar información del intercambio comercial, obtener detalles de los registros y agrupar valores por país o categoría económica.
 
+## Gráfico DER.
+
+<img width="889" height="804" alt="TrabajoPracticoBD" src="https://github.com/user-attachments/assets/48ac371c-14f8-494a-b3a0-c4d2c4e557d2" />
+
 ## Instalación
 
 1. Instalar MariaDB y HeidiSQL.
