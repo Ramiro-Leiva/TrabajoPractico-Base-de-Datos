@@ -64,22 +64,3 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 
 ## Autores
 
-### Vista: `vista_intercambio_detallado`
-
-**Objetivo:** consultar información detallada del intercambio comercial, incluyendo el año, mes, tipo de comercio, país, zona comercial, rubro, categoría económica y valor.
-
-**Consulta SQL:**
-
-```sql
-SELECT *
-FROM vista_intercambio_detallado;
-```
-
-**Resultado:** insertar aquí una captura de los resultados obtenidos en HeidiSQL.
-
-
-Completar con el nombre del estudiante y los datos solicitados por la institución.
-### Vista: `vista_intercambio_detallado`
-
-**Objetivo:** consultar información detallada del intercambio comercial, incluyendo el año, mes, tipo de comercio, país, zona comercial, rubro, categoría económica y valor.
-
