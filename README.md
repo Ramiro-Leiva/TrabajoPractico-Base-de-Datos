@@ -31,7 +31,17 @@ CREATE TABLE pais(p_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT, p_nombre 
 p_zonac SMALLINT NOT NULL, UNIQUE (p_nombre, p_zonac), FOREIGN KEY (p_zonac) REFERENCES zonacomercial(zc_codi));
 ```
 - `zonacomercial`: organiza los países por zona comercial.
+ ```sql
+-- Zona Comercial:
+CREATE TABLE zonacomercial(zc_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+zc_nombre VARCHAR(50) UNIQUE NOT NULL);
+```
 - `tipocomercio`: identifica el tipo de comercio, como exportaciones o importaciones.
+ ```sql
+-- Tipo Comercio:
+CREATE TABLE tipocomercio(tc_codi SMALLINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+tc_descrip VARCHAR(20) UNIQUE NOT NULL);
+```
 - `categoriaeconomica`: almacena las categorías económicas.
 - `rubrousoeconomico`: contiene los rubros de uso económico.
 - `datos`: tabla utilizada para almacenar los datos de origen.
