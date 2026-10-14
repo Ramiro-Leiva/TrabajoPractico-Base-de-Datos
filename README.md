@@ -17,12 +17,12 @@ El objetivo es organizar los datos en tablas relacionadas y facilitar su consult
 La base de datos contiene las siguientes tablas:
 
 - `intercambiocomercial`: almacena los registros de intercambio comercial.
-  ´´´sql.
-  CREATE TABLE intercambiocomercial(ic_codi INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ic_anio SMALLINT(4) UNSIGNED NOT NULL,
-  ic_mes SMALLINT(2) UNSIGNED ZEROFILL NOT NULL, ic_valor DECIMAL(18,2) UNSIGNED NOT NULL, ic_tipo SMALLINT NOT NULL,
-  ic_pais SMALLINT NOT NULL, ic_categoriae SMALLINT NOT NULL, FOREIGN KEY(ic_tipo) REFERENCES tipocomercio(tc_codi),
-  FOREIGN KEY (ic_pais) REFERENCES pais (p_codi), FOREIGN KEY (ic_categoriae) REFERENCES categoriaeconomica(ce_codi));
-  ´´´
+ ```sql
+CREATE TABLE intercambiocomercial(ic_codi INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ic_anio SMALLINT(4) UNSIGNED NOT NULL,
+ic_mes SMALLINT(2) UNSIGNED ZEROFILL NOT NULL, ic_valor DECIMAL(18,2) UNSIGNED NOT NULL, ic_tipo SMALLINT NOT NULL,
+ic_pais SMALLINT NOT NULL, ic_categoriae SMALLINT NOT NULL, FOREIGN KEY(ic_tipo) REFERENCES tipocomercio(tc_codi),
+FOREIGN KEY (ic_pais) REFERENCES pais (p_codi), FOREIGN KEY (ic_categoriae) REFERENCES categoriaeconomica(ce_codi));
+```
 - `pais`: contiene los países.
 - `zonacomercial`: organiza los países por zona comercial.
 - `tipocomercio`: identifica el tipo de comercio, como exportaciones o importaciones.
@@ -57,6 +57,20 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 - `Sentencias-DDL.pdf`: documentación de tablas, campos, índices y relaciones.
 
 ## Autores
+
+### Vista: `vista_intercambio_detallado`
+
+**Objetivo:** consultar información detallada del intercambio comercial, incluyendo el año, mes, tipo de comercio, país, zona comercial, rubro, categoría económica y valor.
+
+**Consulta SQL:**
+
+```sql
+SELECT *
+FROM vista_intercambio_detallado;
+```
+
+**Resultado:** insertar aquí una captura de los resultados obtenidos en HeidiSQL.
+
 
 Completar con el nombre del estudiante y los datos solicitados por la institución.
 ### Vista: `vista_intercambio_detallado`
