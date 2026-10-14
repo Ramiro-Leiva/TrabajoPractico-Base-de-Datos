@@ -88,3 +88,6 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 
 ## Autores
 
+- Ramiro **LEIVA**.
+- Fernando **TORRES**.
+
