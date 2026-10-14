@@ -17,7 +17,7 @@ El objetivo es organizar los datos en tablas relacionadas y facilitar su consult
 La base de datos contiene las siguientes tablas:
 
 - `intercambiocomercial`: almacena los registros de intercambio comercial.
-  ´´´sql
+  ´´´sql.
   CREATE TABLE intercambiocomercial(ic_codi INT NOT NULL PRIMARY KEY AUTO_INCREMENT, ic_anio SMALLINT(4) UNSIGNED NOT NULL,
   ic_mes SMALLINT(2) UNSIGNED ZEROFILL NOT NULL, ic_valor DECIMAL(18,2) UNSIGNED NOT NULL, ic_tipo SMALLINT NOT NULL,
   ic_pais SMALLINT NOT NULL, ic_categoriae SMALLINT NOT NULL, FOREIGN KEY(ic_tipo) REFERENCES tipocomercio(tc_codi),
