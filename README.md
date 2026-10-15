@@ -134,9 +134,61 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 
 ## Instalación / Recreación de la Base de Batos
 - Recrear:
-  1. Abrir HeidiSQL y conectarse al servidor de base de datos.
-  2. Crear una nueva base de datos.
-  3. Copiar las sentencias de las tablas en orden desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
+  
+1. Descargar el CSV con los datos: 
+2. Abrir HeidiSQL y conectarse al servidor de base de datos.
+3. Crear una nueva base de datos.
+4. Copiar y ejecutar la sentencia SQL de `datos` desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos) o
+   Descargar e Importar el Script SQL    y ejecutarlo.
+5. Ir a Herramientas, Importar Archivo CSV...
+   Seleccionar el archivo descargado, seleccionar la base de datos y la tabla en la cual serán cargados los datos, deseleccionar el          campo `id` e importar.
+   <img width="650" height="639" alt="image" src="https://github.com/user-attachments/assets/974ad8a7-c333-47d1-9c3e-39b76b3f396f" />
+6. Copiar y ejecutar en orden las sentencias SQL desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
+7. Una vez creadas las tablas, cargar los datos dentro de las tablas correspondientes:
+ ```sql
+-- Carga de datos: 
+-- ===========================================
+-- Cargar Tipos de Comercio:
+INSERT INTO tipocomercio (tc_descrip)
+SELECT DISTINCT d.d_tipocomercio
+FROM datos d 
+WHERE d.d_tipocomercio IS NOT NULL;
+
+-- Cargar Zonas Comerciales:
+INSERT INTO zonacomercial (zc_nombre)
+SELECT DISTINCT d.d_zonacomercial 
+FROM datos d
+WHERE d.d_zonacomercial IS NOT NULL;
+
+-- Cargar Rubros / Usos Economicos:
+INSERT INTO rubrousoeconomico (rue_descrip)
+SELECT DISTINCT d.d_rubrousoeconomico
+FROM datos d
+WHERE d.d_rubrousoeconomico IS NOT NULL;
+
+-- Cargar Paises:
+INSERT INTO pais (p_nombre, p_zonac)
+SELECT DISTINCT d.d_pais, z.zc_codi
+FROM datos d
+JOIN zonacomercial z ON z.zc_nombre = d.d_zonacomercial;
+
+-- Cargar Categorias Economicas:
+INSERT INTO categoriaeconomica (ce_descrip, ce_rue)
+SELECT DISTINCT d.d_categoriaeconomica, r.rue_codi
+FROM datos d
+JOIN rubrousoeconomico r ON r.rue_descrip = d.d_rubrousoeconomico;
+
+-- Cargar Intercambios Comerciales:
+INSERT INTO intercambiocomercial (ic_anio, ic_mes, ic_valor, ic_tipo, ic_pais, ic_categoriae)
+SELECT d.d_anio, d.d_mes, d.d_valor, tc.tc_codi, p.p_codi, c.ce_codi
+FROM datos d
+JOIN tipocomercio tc ON tc.tc_descrip = d.d_tipocomercio
+JOIN zonacomercial z ON z.zc_nombre = d.d_zonacomercial
+JOIN pais p ON p.p_nombre = d.d_pais AND p.p_zonac = z.zc_codi
+JOIN rubrousoeconomico r ON r.rue_descrip = d.d_rubrousoeconomico
+JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue = r.rue_codi;
+```
+8. Copiar y ejecutar las sentencias SQL de las [Vistas](#vistas).
 1. Instalar MariaDB y HeidiSQL.
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear o seleccionar la base de datos `tpbasedatos`.
