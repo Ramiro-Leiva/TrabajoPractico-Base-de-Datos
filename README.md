@@ -6,6 +6,8 @@ Este proyecto consiste en el diseño e implementación de una base de datos rela
 
 El objetivo es organizar los datos en tablas relacionadas y facilitar su consulta mediante sentencias SQL y vistas.
 
+Los datos fueron extraídos desde: [indec.gob.ar](https://www.indec.gob.ar/ftp/ica_digital/ica_d_08_26E158B1D119/#Principales%20socios) 
+
 ## Tecnologías utilizadas
 
 - **Sistema gestor de base de datos:** MariaDB.
@@ -199,8 +201,8 @@ JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue 
 ## Archivos del proyecto
 
 - `BackUpDataBase.sql`: script SQL con la estructura y los objetos de la base de datos. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/BackUpDataBase.sql)
-- `Sentencias-DDL.pdf`: documentación de tablas, campos, índices y relaciones.
-
+- `Sentencias-DDL.pdf`: documentación de tablas, campos, índices y relaciones. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/Documentaci%C3%B3n%20-%20Secuencias%20DDL.pdf)
+- `TrabajoPracticoBD.png`: Diagrama Entidad Relación. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/TrabajoPracticoBD.png) 
 ## Autores
 
 - Ramiro **LEIVA**.
