@@ -190,7 +190,7 @@ JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue 
 8. Copiar y ejecutar las sentencias SQL de las [Vistas](#vistas).
 
 - Instalar: 
-1. Descargar el archivo .
+1. Descargar el archivo [`BackUpDataBase.sql`](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/BackUpDataBase.sql)
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear o seleccionar la base de datos `tpbasedatos`.
 4. Importar el archivo SQL del proyecto.
@@ -198,7 +198,7 @@ JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue 
 
 ## Archivos del proyecto
 
-- `TPDB.sql`: script SQL con la estructura y los objetos de la base de datos.
+- `BackUpDataBase.sql`: script SQL con la estructura y los objetos de la base de datos. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/BackUpDataBase.sql)
 - `Sentencias-DDL.pdf`: documentación de tablas, campos, índices y relaciones.
 
 ## Autores
