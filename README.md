@@ -137,12 +137,12 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 ## Instalación / Recreación de la Base de Batos
 - Recrear:
   
-1. Descargar el CSV con los datos: 
+1. Descargar el CSV con los datos [`DataSet-IntercambiosComerciales.csv`](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/DataSet-IntercambiosComerciales.csv): 
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear una nueva base de datos.
 4. Copiar y ejecutar la sentencia SQL de `datos` desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos).
 6. Ir a Herramientas, Importar Archivo CSV...
-   Seleccionar el archivo descargado, seleccionar la base de datos y la tabla en la cual serán cargados los datos, deseleccionar el          campo `id` e importar.
+   Seleccionar el archivo descargado, seleccionar la base de datos y la tabla en la cual serán cargados los datos, deseleccionar el campo `id` e importar.
    <img width="650" height="639" alt="image" src="https://github.com/user-attachments/assets/974ad8a7-c333-47d1-9c3e-39b76b3f396f"/>
 7. Copiar y ejecutar en orden las sentencias SQL desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
 8. Una vez creadas las tablas, cargar los datos dentro de las tablas correspondientes:
@@ -202,7 +202,8 @@ JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue 
 
 - `BackUpDataBase.sql`: script SQL con la estructura y los objetos de la base de datos. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/BackUpDataBase.sql)
 - `Sentencias-DDL.pdf`: documentación de tablas, campos, índices y relaciones. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/Documentaci%C3%B3n%20-%20Secuencias%20DDL.pdf)
-- `TrabajoPracticoBD.png`: Diagrama Entidad Relación. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/TrabajoPracticoBD.png) 
+- `TrabajoPracticoBD.png`: Diagrama Entidad Relación. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/TrabajoPracticoBD.png)
+- `DataSet-IntercambiosComerciales.csv`: DataSet de Intercambios Comerciales. [Ver Archivo...](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/DataSet-IntercambiosComerciales.csv)
 ## Autores
 
 - Ramiro **LEIVA**.
