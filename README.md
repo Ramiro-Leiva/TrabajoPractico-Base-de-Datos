@@ -136,7 +136,7 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 - Recrear:
   1. Abrir HeidiSQL y conectarse al servidor de base de datos.
   2. Crear una nueva base de datos.
-  3. Copiar las sentencias de las tablas en orden desde
+  3. Copiar las sentencias de las tablas en orden desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
 1. Instalar MariaDB y HeidiSQL.
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear o seleccionar la base de datos `tpbasedatos`.
