@@ -1,4 +1,17 @@
-# Base de datos: TPBaseDatos
+# Trabajo Práctico Base de datos: Intercambios Comerciales
+
+## Índice de contenidos
+
+- [Descripción](#descripción)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Estructura de la base de datos](#estructura-de-la-base-de-datos)
+- [Vistas](#vistas)
+- [Gráfico DER](#gráfico-der)
+- [Instalación / Recreación de la base de datos](#instalación)
+- [Archivos del proyecto](#archivos-del-proyecto)
+- [Autores](#autores)
+
+---
 
 ## Descripción
 
@@ -23,7 +36,7 @@ La base de datos contiene las siguientes tablas:
 CREATE TABLE datos(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, d_anio INT(4) UNSIGNED NOT NULL,
  d_mes INT(2) UNSIGNED ZEROFILL NOT NULL, d_tipocomercio VARCHAR(50) NOT NULL,
 d_zonacomercial VARCHAR(50) NOT NULL, d_pais VARCHAR(50) NOT NULL,
-d_rubrousoecnomico VARCHAR(100) NOT NULL, d_categoriaeconomica VARCHAR(100) NOT NULL, d_valor DECIMAL (18,2) NOT NULL);
+d_rubrousoeconomico VARCHAR(100) NOT NULL, d_categoriaeconomica VARCHAR(100) NOT NULL, d_valor DECIMAL (18,2) NOT NULL);
 ```
 - `tipocomercio`: identifica el tipo de comercio, como exportaciones o importaciones.
  ```sql
@@ -134,7 +147,7 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 
 <img width="889" height="804" alt="TrabajoPracticoBD" src="https://github.com/user-attachments/assets/48ac371c-14f8-494a-b3a0-c4d2c4e557d2"/>
 
-## Instalación / Recreación de la Base de Batos
+## Instalación 
 - Recrear:
   
 1. Descargar el CSV con los datos [`DataSet-IntercambiosComerciales.csv`](https://github.com/Ramiro-Leiva/TrabajoPractico-Base-de-Datos/blob/main/DataSet-IntercambiosComerciales.csv): 
