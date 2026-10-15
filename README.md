@@ -130,7 +130,7 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 
 ## Gráfico DER.
 
-<img width="889" height="804" alt="TrabajoPracticoBD" src="https://github.com/user-attachments/assets/48ac371c-14f8-494a-b3a0-c4d2c4e557d2" />
+<img width="889" height="804" alt="TrabajoPracticoBD" src="https://github.com/user-attachments/assets/48ac371c-14f8-494a-b3a0-c4d2c4e557d2"/>
 
 ## Instalación / Recreación de la Base de Batos
 - Recrear:
@@ -138,13 +138,12 @@ Estas vistas permiten consultar información del intercambio comercial, obtener 
 1. Descargar el CSV con los datos: 
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear una nueva base de datos.
-4. Copiar y ejecutar la sentencia SQL de `datos` desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos) o
-   Descargar e Importar el Script SQL    y ejecutarlo.
-5. Ir a Herramientas, Importar Archivo CSV...
+4. Copiar y ejecutar la sentencia SQL de `datos` desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos).
+6. Ir a Herramientas, Importar Archivo CSV...
    Seleccionar el archivo descargado, seleccionar la base de datos y la tabla en la cual serán cargados los datos, deseleccionar el          campo `id` e importar.
-   <img width="650" height="639" alt="image" src="https://github.com/user-attachments/assets/974ad8a7-c333-47d1-9c3e-39b76b3f396f" />
-6. Copiar y ejecutar en orden las sentencias SQL desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
-7. Una vez creadas las tablas, cargar los datos dentro de las tablas correspondientes:
+   <img width="650" height="639" alt="image" src="https://github.com/user-attachments/assets/974ad8a7-c333-47d1-9c3e-39b76b3f396f"/>
+7. Copiar y ejecutar en orden las sentencias SQL desde la [Estructura de la base de datos](#estructura-de-la-base-de-datos)
+8. Una vez creadas las tablas, cargar los datos dentro de las tablas correspondientes:
  ```sql
 -- Carga de datos: 
 -- ===========================================
@@ -189,7 +188,9 @@ JOIN rubrousoeconomico r ON r.rue_descrip = d.d_rubrousoeconomico
 JOIN categoriaeconomica c ON c.ce_descrip = d.d_categoriaeconomica AND c.ce_rue = r.rue_codi;
 ```
 8. Copiar y ejecutar las sentencias SQL de las [Vistas](#vistas).
-1. Instalar MariaDB y HeidiSQL.
+
+- Instalar: 
+1. Descargar el archivo .
 2. Abrir HeidiSQL y conectarse al servidor de base de datos.
 3. Crear o seleccionar la base de datos `tpbasedatos`.
 4. Importar el archivo SQL del proyecto.
